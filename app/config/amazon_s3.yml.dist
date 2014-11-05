@@ -1,0 +1,25 @@
+# Configure Gaufrette
+knp_gaufrette:
+    adapters:
+        amazon:
+            amazon_s3:
+                amazon_s3_id: innova.amazon_s3
+                bucket_name: %amazon_s3.bucket%
+                create: true
+    filesystems:
+        amazon:
+            adapter: amazon
+
+
+# Declare AS3 Service
+services:
+    innova.amazon_s3:
+        class: AmazonS3
+        arguments:
+            options: { key: %amazon_s3.key%, secret: %amazon_s3.secret%, certificate_authority: false, default_cache_config: true }
+
+# Set parameters
+parameters:
+    amazon_s3.bucket: your_bucket_url
+    amazon_s3.key:    your_key
+    amazon_s3.secret: your_secret

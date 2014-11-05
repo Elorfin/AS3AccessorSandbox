@@ -1,0 +1,13 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <h1>List files</h1>
+
+    {{ form(upload_form) }}
+
+    <ul>
+    {% for file in files %}
+        <li><a href="{{ path('innova_as3_gateway_show', {name: file}) }}">{{ file }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

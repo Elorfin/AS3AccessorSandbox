@@ -1,0 +1,4 @@
+innova_as3_gateway:
+    resource: "@InnovaAS3GatewayBundle/Controller/"
+    type: annotation
+    prefix: /
